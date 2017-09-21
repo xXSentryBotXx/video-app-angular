@@ -1,0 +1,27 @@
+<h1>Watch movies in our site.</h1>
+<div class="row" ng-controller="mainController">
+  <div class="col-md-12">
+    <div class="carousel slide multi-item-carousel" id="theCarousel">
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="col-xs-4">
+            <div class="col-xs-2 offset-xs-1"></div>
+            <a ui-sref="details">
+              <img width="214" height="317" ng-src="{{'/img/movie-placeholder.jpg'}}" class="img-responsive">
+            </a>
+          </div>
+        </div>
+        <div ng-repeat="movie in movies" class="item">
+          <div class="col-xs-4">
+            <div class="col-xs-2 offset-xs-1"></div>
+            <a ui-sref="details">
+              <img width="214" height="317" ng-src="{{movie.images[0].url ? movie.images[0].url : '/img/movie-placeholder.jpg'}}" class="img-responsive">
+            </a>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" data-target="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+      <a class="right carousel-control" data-target="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+    </div>
+  </div>
+</div>
