@@ -1,5 +1,5 @@
 body{
-  background: #333;
+  background: #AAA;
   color: #ddd;
 }
 
@@ -28,4 +28,8 @@ video {
 .video-info {
   width: 50%;
   margin: auto;
+}
+
+footer {
+  margin-top: 20px;
 }
