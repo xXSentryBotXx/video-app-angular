@@ -1,6 +1,7 @@
 (function () {
   App.controller('mainController', ['$scope', '$http', function ($scope, $http) {
     $scope.movies = [];
+    $scope.keyDown = onKeyPressed;
 
     function getMovies () {
       $http({
@@ -8,11 +9,13 @@
     		method: "GET"
     	}).then(function(response){
     		$scope.movies = response.data.entries;
-    	}).then(function (response) {
-        carouselPlugin($)
-      }).catch(function(err){
+    	}).catch(function(err){
     		console.log(err);
     	});
+    }
+
+    function onKeyPressed(evt) {
+      console.log(evt);
     }
 
     function init() {

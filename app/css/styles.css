@@ -1,35 +1,8 @@
-.multi-item-carousel .carousel-inner > .item {
-  transition: 500ms ease-in-out left;
-}
-.multi-item-carousel .carousel-inner .active.left {
-  left: -33%;
-}
-.multi-item-carousel .carousel-inner .active.right {
-  left: 33%;
-}
-.multi-item-carousel .carousel-inner .next {
-  left: 33%;
-}
-.multi-item-carousel .carousel-inner .prev {
-  left: -33%;
-}
-@media all and (transform-3d), (-webkit-transform-3d) {
-  .multi-item-carousel .carousel-inner > .item {
-    transition: 500ms ease-in-out left;
-    transition: 500ms ease-in-out all;
-    backface-visibility: visible;
-    transform: none!important;
-  }
-}
-.multi-item-carousel .carouse-control.left,
-.multi-item-carousel .carouse-control.right {
-  background-image: none;
-}
-
 body{
   background: #333;
   color: #ddd;
 }
+
 h1{
   color: white;
   font-size: 2.25em;
@@ -44,30 +17,15 @@ video {
   height: auto;
 }
 
-/*.hidden {
-  display: none;
-  visibility: hidden;
-}*/
-
-/*.details {
-  transition: 500ms ease-in-out left;
-  transition: 500ms ease-in-out all;
-  backface-visibility: visible;
-  transform: none!important;
-}*/
-
-.details {
-  -vendor-animation-duration: 3s;
-  -vendor-animation-delay: 2s;
-}
-.hidden {
-  animation-name: bounceOutLeft;
-  animation-duration: 2s;
-  visibility: hidden;
+.card-img-left {
+  border-bottom-left-radius: calc(.25rem - 1px);
+  border-top-left-radius: calc(.25rem - 1px);
+  float: left;
+  padding-right: 1em;
+  margin-bottom: -1.25em;
 }
 
-/* The element to apply the animation to */
-.details {
-    animation-name: bounceInLeft;
-    animation-duration: 2s;
+.video-info {
+  width: 50%;
+  margin: auto;
 }

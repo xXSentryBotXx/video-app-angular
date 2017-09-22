@@ -2,15 +2,9 @@
   window.App = angular.module('video-app', ['ui.router']);
 
   App.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', function ($stateProvider, $locationProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise( function($injector, $location) {
-      var $state = $injector.get('$state');
-      //var user = $injector.get('user');
-
-      $state.go('main');
-    });
 
     $stateProvider
-      .state(
+      .state('main',
         {
           name: 'main',
           url: '/main',
@@ -18,19 +12,25 @@
           controller: 'mainController'
         }
       )
-      .state(
+      .state('details',
         {
           name: 'video-details',
           url: '/details',
           templateUrl: 'views/movie-details.html'
         }
       )
-      .state(
+      .state('player',
         {
           name: 'video-player',
           url: '/player',
           templateUrl: 'views/movie-player.html'
         }
       );
+
+    $urlRouterProvider.otherwise( function($injector, $location) {
+      var $state = $injector.get('$state');
+      //var user = $injector.get('user');
+      $state.go('main');
+    });
   }]);
 })();
