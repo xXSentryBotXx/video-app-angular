@@ -1,31 +1,24 @@
 <h1>Watch movies in our site.</h1>
 <div class="row">
   <div class="col-xs-12">
-    <div class="carousel slide" id="theCarousel">
-      <div class="carousel-inner">
-        <div class="col-xs-8 card item active col-xs-offset-2">
-          <img width="314" height="417" ng-src="{{movie.images[0].url ? movie.images[0].url : '/img/movie-placeholder.jpg'}}" class="img-responsive card-img-left">
-          <div class="card-block">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </div>
-        </div>
-        <div ng-repeat="movie in movies" class="col-xs-8 card item col-xs-offset-2">
-          <img width="314" height="417" ng-src="{{movie.images[0].url ? movie.images[0].url : '/img/movie-placeholder.jpg'}}" class="img-responsive card-img-left">
-          <div class="card-block">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </div>
-        </div>
-        <a ng-keypress="onKeyPressed($event)" class="col-xs-1 left carousel-control" data-target="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-        <a ng-keypress="onKeyPressed($event)" class="col-xs-1 right carousel-control" data-target="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+    <form class="form-inline" role="form">
+      <div class="form-group has-warning">
+        <input ng-model="search.title" type="text" class="form-control" placeholder="Search a movie" />
+        <a class="btn btn-custom">
+          <span><i class="glyphicon glyphicon-search"></i></span>
+        </a>
       </div>
-    </div>
+    </form>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="images col-xs-12">
+      <li class="col-xs-3" ng-repeat="movie in movies | filter:search">
+        <a ui-sref="details" ng-click="setActiveMovie(movie)"><img width="214" height="317" ng-src="{{movie.images[0].url ? movie.images[0].url : '/img/movie-placeholder.jpg'}}" class="img-responsive"></a>
+        <p class="h6">{{movie.title}}</p>
+      </li>
+    </ul>
   </div>
 </div>

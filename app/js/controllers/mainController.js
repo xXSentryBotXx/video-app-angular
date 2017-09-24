@@ -1,27 +1,20 @@
 (function () {
-  App.controller('mainController', ['$scope', '$http', function ($scope, $http) {
-    $scope.movies = [];
-    $scope.keyDown = onKeyPressed;
+  App.controller('mainController', ['$scope', 'movieService', function ($scope, movieService) {
 
-    function getMovies () {
-      $http({
-    		url: 'https://demo2697834.mockable.io/movies',
-    		method: "GET"
-    	}).then(function(response){
-    		$scope.movies = response.data.entries;
-    	}).catch(function(err){
-    		console.log(err);
-    	});
+    function setActiveMovie (movie) {
+      movieService.setActiveMovie(movie);
     }
 
-    function onKeyPressed(evt) {
-      console.log(evt);
+    function init () {
+      movieService
+        .getMovies()
+        .then(movies => {
+          $scope.movies = movies;
+        });
+
+      $scope.setActiveMovie = setActiveMovie;
     }
 
-    function init() {
-      getMovies();
-    }
-
-    init();
+    init()
   }]);
 })();

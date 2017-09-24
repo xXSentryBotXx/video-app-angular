@@ -1,3 +1,28 @@
-<video width="640" height="360" src="http://d2bqeap5aduv6p.cloudfront.net/project_coderush_640x360_521kbs_56min.mp4" poster="http://lorempixel.com/214/317/" controls>
 
-</video>
+  <a ui-sref="details"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
+  <h5>{{activeMovie.title}}</h5>
+  <div class="col-xs-6 col-xs-offset-2">
+  <div class="video-container">
+		<!-- Video -->
+		<video id="video" width="640" height="365">
+		  <source ng-src="{{activeMovie.contents[0].url}}">
+		</video>
+		<!-- Video Controls -->
+		<div class="video-controls">
+      <form class="form-inline">
+        <div class="form-group seek-bar">
+          <input ng-model="currentTime" ng-change="updateVideoTime()" class="form-control" type="range" id="seek-bar" value="0" step="any">
+        </div>
+        <div class="form-group">
+          <button id="play" ng-show="paused" ng-click="pauseAndPlay()" class="btn btn-link"><i class="glyphicon glyphicon-play"></i></button>
+          <button id="pause" ng-show="!paused" ng-click="pauseAndPlay()" class="btn btn-link"><i class="glyphicon glyphicon-pause"></i></button>
+          <button id="unmuted" ng-show="!muted" ng-click="toggleMute()" class="btn btn-link"><i class="glyphicon glyphicon-volume-up"></i></button>
+          <button id="muted" ng-show="muted" ng-click="toggleMute()" class="btn btn-link"><i class="glyphicon glyphicon-volume-off"></i></button>
+    			<input  class="form-control" ng-model="volume" ng-change="changeVolume()" type="range" id="volume-bar" min="0" max="1" step="0.05" value="1">
+          <button id="fullscreen" ng-show="!isFullScreen"  ng-click="triggerFullScreen()" class="btn btn-link pull-right"><i class="glyphicon glyphicon-fullscreen"></i></button>
+          <button id="quit-fullscreen" ng-show="isFullScreen"  ng-click="triggerFullScreen()" class="btn btn-link pull-right"><i class="glyphicon glyphicon-screenshot"></i></button>
+        </div>
+      </form>
+		</div>
+	</div>
+  </div>

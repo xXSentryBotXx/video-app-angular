@@ -16,14 +16,32 @@
         {
           name: 'video-details',
           url: '/details',
-          templateUrl: 'views/movie-details.html'
+          templateUrl: 'views/movie-details.html',
+          controller: 'detailsController'
         }
       )
       .state('player',
         {
           name: 'video-player',
           url: '/player',
-          templateUrl: 'views/movie-player.html'
+          templateUrl: 'views/movie-player.html',
+          controller: 'playerController'
+        }
+      )
+      .state('history',
+        {
+          name: 'history',
+          url: '/history',
+          templateUrl: 'views/history.html',
+          controller: 'historyController'
+        }
+      )
+      .state('about',
+        {
+          name: 'about',
+          url: '/about',
+          templateUrl: 'views/about.html',
+          controller: 'aboutController'
         }
       );
 
