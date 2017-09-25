@@ -1,5 +1,5 @@
 (function () {
-  App.service('movieService', ['$http', function ($http) {
+  App.service('movieService', ['$http', 'storageService', function ($http, storageService) {
     let movies = [];
     let historyMovies = [];
     let activeMovie = {};
@@ -22,7 +22,7 @@
     }
 
     function getMoviesHistory () {
-      let ids = ['10-things-i-hate-about-you', '12-years-a-slave', '2-guns'];
+      let ids = storageService.getHistoryIds();
       return movies.filter( movie => ids.indexOf(movie.id) >= 0);
     }
 

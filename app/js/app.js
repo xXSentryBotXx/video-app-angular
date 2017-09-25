@@ -47,7 +47,6 @@
 
     $urlRouterProvider.otherwise( function($injector, $location) {
       var $state = $injector.get('$state');
-      //var user = $injector.get('user');
       $state.go('main');
     });
   }]);

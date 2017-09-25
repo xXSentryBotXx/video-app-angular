@@ -1,5 +1,8 @@
 <h1>The History</h1>
 <div class="container-fluid">
+  <div ng-show="moviesHistory.length < 1" class="row">
+    <p class="h3 text-center">No data to show.</p>
+  </div>
   <div ng-repeat="movie in moviesHistory" class="row center-block history-row">
     <div class="col-xs-3">
       <img class="img-responsive center-block" width="114" height="217" ng-src="{{movie.images[0].url ? movie.images[0].url : '/img/movie-placeholder.jpg'}}" class="img-responsive">
@@ -10,7 +13,7 @@
           <h4 class="card-title">{{movie.title}}</h4>
           <h6 class="card-subtitle mb-2 text-muted badge">{{movie.publishedDate | date:'yyyy'}}</h6>
           <p class="card-text">{{movie.description}}</p>
-          <a ui-sref="player" class="btn btn-custom card-link">Watch again</a>
+          <a ng-click="setActiveMovie(movie)" ui-sref="player" class="btn btn-custom card-link"><i class="glyphicon glyphicon-eye-open"></i> Watch again</a>
         </div>
       </div>
     </div>

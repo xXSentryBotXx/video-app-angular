@@ -1,6 +1,16 @@
-<div class="">
-  <a ui-sref="main"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
-  <h1>Movie details</h1>
-  <h1>{{activeMovie.title}}</h1>
-  <a ui-sref="player">Watch</a>
+<div class="container-fluid">
+  <div class="row details">
+    <div class="col-xs-8 col-xs-offset-2">
+      <a ui-sref="main"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
+      <div class="card">
+        <div class="card-block">
+          <img width="214" height="317" ng-src="{{activeMovie.images[0].url ? activeMovie.images[0].url : '/img/movie-placeholder.jpg'}}" class="card-img-left">
+          <h4 class="card-title">{{activeMovie.title}}</h4>
+          <h6 class="card-subtitle mb-2 text-muted badge">{{activeMovie.publishedDate | date:'yyyy'}}</h6>
+          <p class="card-text text-default">{{activeMovie.description}}</p>
+          <a ui-sref="player"><i class="glyphicon glyphicon-play-circle"></i> Watch Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

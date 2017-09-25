@@ -77,6 +77,23 @@ nav .glyphicon.glyphicon-menu-hamburger {
 .navbar-custom .navbar-nav > li > a:focus {
   color: #BF9B30;
   background-color: transparent;
+  border-left: 0.5px solid #DDD;
+  border-right: 0.5px solid #DDD;
+}
+
+footer a {
+  color: #A67C00;
+}
+
+footer a:active {
+  color: #FFBF00;
+}
+
+footer a:hover,
+footer a:focus {
+  color: #BF9B30;
+  background-color: transparent;
+  text-decoration: none;
 }
 
 .btn-custom {
@@ -117,13 +134,14 @@ ul.images li {
   display: inline-block;
   float: none;
   background-color: #222;
+  padding: 2px;
 }
 
 ul.images li p {
   white-space: nowrap;
-    width: 12em;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  width: 12em;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 ul.images::-webkit-scrollbar-track
@@ -134,14 +152,16 @@ ul.images::-webkit-scrollbar-track
 
 ul.images::-webkit-scrollbar
 {
-	width: 10px;
+	width: 5px;
+  height: 5px;
 	background-color: #BF9B30;
 }
 
 ul.images::-webkit-scrollbar-thumb
 {
 	background-color: #BF9B30;
-	border: 2px solid #555555;
+  width: 5px;
+  height: 5px;
 }
 
 .history-row {
@@ -239,4 +259,22 @@ video::-webkit-media-controls {
 }
 video::-webkit-media-controls-enclosure {
   display:none !important;
+}
+
+.link-text {
+  color: #BBB;
+}
+
+.link-text:hover {
+  color: #BF9B30;
+}
+
+.details {
+  margin: 1em;
+  padding: 2em;
+  background-color: #222;
+}
+
+.details .card-block p {
+  color: #BBB;
 }

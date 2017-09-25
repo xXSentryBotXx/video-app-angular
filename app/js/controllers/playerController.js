@@ -1,5 +1,5 @@
 (function () {
-  App.controller('playerController', ['$scope', 'movieService', function ($scope, movieService) {
+  App.controller('playerController', ['$scope', '$state', 'movieService', 'storageService', function ($scope, $state, movieService, storageService) {
     $scope.activeMovie = {};
     $scope.pauseAndPlay = pauseAndPlay;
     $scope.triggerFullScreen = triggerFullScreen;
@@ -15,9 +15,11 @@
     let $seekBar = document.getElementById('seek-bar');
 
     $video.addEventListener('timeupdate', updateProgressBarTime);
+    $video.addEventListener('ended', navigateToMain);
 
     function getActiveMovie () {
       $scope.activeMovie = movieService.getActiveMovie();
+      storageService.addMovieId($scope.activeMovie.id);
     }
 
     function triggerFullScreen () {
@@ -74,6 +76,14 @@
 
     function updateProgressBarTime () {
       $seekBar.value = (100 / $video.duration) * $video.currentTime;
+    }
+
+    function navigateToMain () {
+      $state.go('main');
+    }
+
+    function navigateToMain () {
+      $state.go('main');
     }
 
     function init () {
