@@ -35,14 +35,6 @@
           templateUrl: 'views/history.html',
           controller: 'historyController'
         }
-      )
-      .state('about',
-        {
-          name: 'about',
-          url: '/about',
-          templateUrl: 'views/about.html',
-          controller: 'aboutController'
-        }
       );
 
     $urlRouterProvider.otherwise( function($injector, $location) {
