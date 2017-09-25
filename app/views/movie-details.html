@@ -6,8 +6,16 @@
         <div class="card-block">
           <img width="214" height="317" ng-src="{{activeMovie.images[0].url ? activeMovie.images[0].url : '/img/movie-placeholder.jpg'}}" class="card-img-left">
           <h4 class="card-title">{{activeMovie.title}}</h4>
-          <h6 class="card-subtitle mb-2 text-muted badge">{{activeMovie.publishedDate | date:'yyyy'}}</h6>
-          <p class="card-text text-default">{{activeMovie.description}}</p>
+          <h6 class="card-subtitle mb-2 text-muted">
+            <span class="badge">{{activeMovie.publishedDate | date:'yyyy'}}</span>
+            <span ng-repeat="rate in activeMovie.parentalRatings" class="label label-default category">{{rate.rating}}</span>
+          </h6>
+          <h6 class="card-subtitle mb-2 text-muted">
+            <span ng-repeat="category in activeMovie.categories" class="label label-default category">{{category.title}} </span>
+          </h6>
+          <p class="h5 card-text text-default">{{activeMovie.description}}</p>
+          <p class="h5 bold">Cast:</p>
+          <p ng-repeat="cast in activeMovie.credits" class="h6 card-text text-default">{{cast.name}}</p>
           <a ui-sref="player"><i class="glyphicon glyphicon-play-circle"></i> Watch Now</a>
         </div>
       </div>

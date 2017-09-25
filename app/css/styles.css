@@ -278,3 +278,7 @@ video::-webkit-media-controls-enclosure {
 .details .card-block p {
   color: #BBB;
 }
+
+.category {
+  margin: 3px;
+}
