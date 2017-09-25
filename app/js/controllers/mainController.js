@@ -15,6 +15,6 @@
       $scope.setActiveMovie = setActiveMovie;
     }
 
-    init()
+    init();
   }]);
 })();

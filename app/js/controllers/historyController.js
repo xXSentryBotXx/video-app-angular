@@ -5,7 +5,7 @@
     $scope.moviesHistory = [];
 
     function getMoviesHistory () {
-      $scope.moviesHistory = movieService.getMoviesHistory()
+      $scope.moviesHistory = movieService.getMoviesHistory();
     }
 
     function setActiveMovie (movie) {

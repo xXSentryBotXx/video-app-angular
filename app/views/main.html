@@ -14,6 +14,9 @@
 <br>
 <div class="row">
   <div class="col-xs-12">
+    <div ng-show="movies.length < 1" class="row">
+      <p class="h3 text-center">No data to show.</p>
+    </div>
     <ul class="images col-xs-12">
       <li class="col-xs-3 item" ng-repeat="movie in movies | filter:search">
         <a ui-sref="details" ng-click="setActiveMovie(movie)"><img width="214" height="317" ng-src="{{movie.images[0].url ? movie.images[0].url : '/img/movie-placeholder.jpg'}}" class="img-responsive"></a>

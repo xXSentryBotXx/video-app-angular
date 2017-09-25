@@ -246,6 +246,10 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   color: #A67C00;
 }
 
+.btn.btn-link:hover {
+  color: #BF9B30;
+}
+
 .video-controls .form-group {
   width: 100%;
 }
@@ -257,6 +261,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 video::-webkit-media-controls {
   display:none !important;
 }
+
 video::-webkit-media-controls-enclosure {
   display:none !important;
 }

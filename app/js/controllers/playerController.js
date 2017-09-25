@@ -23,12 +23,14 @@
     }
 
     function triggerFullScreen () {
-      var isInFullScreen = (document.fullscreenElement && document.fullscreenElement !== null) ||
+      let isInFullScreen =
+        (document.fullscreenElement && document.fullscreenElement !== null) ||
         (document.webkitFullscreenElement && document.webkitFullscreenElement !== null) ||
         (document.mozFullScreenElement && document.mozFullScreenElement !== null) ||
         (document.msFullscreenElement && document.msFullscreenElement !== null);
 
-      var docElm = document.documentElement;
+      let docElm = document.documentElement;
+
       if (!isInFullScreen) {
         if ($video.requestFullscreen) {
           $video.requestFullscreen();
@@ -38,15 +40,15 @@
           $video.webkitRequestFullscreen();
         }
       } else {
-          if (document.exitFullscreen) {
-              document.exitFullscreen();
-          } else if (document.webkitExitFullscreen) {
-              document.webkitExitFullscreen();
-          } else if (document.mozCancelFullScreen) {
-              document.mozCancelFullScreen();
-          } else if (document.msExitFullscreen) {
-              document.msExitFullscreen();
-          }
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
       }
 
       $scope.isFullScreen = !isInFullScreen;

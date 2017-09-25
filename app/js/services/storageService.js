@@ -1,8 +1,9 @@
 (function () {
   App.service('storageService', ['$http', '$window', function ($http, $window) {
-    var historyMovies = {
+    let historyMovies = {
       movieIds: []
     };
+
     const KEY = 'HISTORY_IDS';
 
     function addMovieId (movieId) {

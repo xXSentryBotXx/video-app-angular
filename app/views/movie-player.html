@@ -1,12 +1,10 @@
-<a ui-sref="details"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
+<a class="btn btn-link" ui-sref="details"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
 <p class="h5 text-center">{{activeMovie.title}}</p>
 <div class="col-xs-6 col-xs-offset-2">
 <div class="video-container">
-	<!-- Video -->
 	<video id="video" width="640" height="365" autoplay>
 	  <source ng-src="{{activeMovie.contents[0].url}}">
 	</video>
-	<!-- Video Controls -->
 	<div class="video-controls">
     <form class="form-inline">
       <div class="form-group seek-bar">
