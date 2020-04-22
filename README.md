@@ -12,5 +12,3 @@ Then run `npm install` command to install all dependencies.
 Finally run `npm start` command to start the app.
 
 Then navigate to `localhost:3000` in your browser.
-
-##### [Live demo](https://video-app-angular-pwaowiwogs.now.sh)
