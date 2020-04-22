@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 1234;
 
 app.use(express.static(path.join(__dirname, 'app')));
 app.use('/bootstrap', express.static(path.join(__dirname, '/node_modules/bootstrap/dist')));
